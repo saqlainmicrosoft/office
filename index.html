@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Apps - Essential Software Downloads</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <style>
+        /* Light Mode (Default) */
+        :root {
+            --primary: #4285F4;
+            --secondary: #6da60c;
+            --accent: #EA4335;
+            --light: #FFFFFF;
+            --dark: #202124;
+            --bg: #F8F9FA;
+            --links-primary: #007bff;
+            --hover: #eb3480; /* Light mode hover */
+        }
+
+        /* Dark Mode Override */
+        body.dark-mode {
+            --primary: #64b5f6;
+            --secondary: #81c784;
+            --accent: #f06292;
+            --light: #303030;
+            --dark: #e0e0e0;
+            --bg: #212121;
+            --links-primary: #81d4fa;
+            --hover: #eb3480; /* Dark mode hover */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            overflow-x: hidden;
+            color: var(--dark);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 i {
+            margin-right: 10px;
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        h2.section-title {
+            font-size: 1.4rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--dark);
+            position: relative;
+            text-align: center;
+            width: 100%;
+        }
+
+        .subtitle {
+            color: var(--dark);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.7;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .app-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer; /* Add cursor pointer */
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .windows-card:hover {
+            border-color: rgba(0, 120, 215, 0.6);
+            box-shadow: 0 0 10px rgba(0, 120, 215, 0.4);
+        }
+
+        .android-card:hover {
+            border-color: rgba(140, 219, 2, 0.6);
+            box-shadow: 0 0 10px rgba(140, 219, 2, 0.4);
+        }
+
+        .app-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+        }
+
+        .windows-icon {
+            color: var(--primary);
+            background: rgba(0, 120, 215, 0.1);
+        }
+
+        .android-icon {
+            color: var(--secondary);
+            background: rgba(61, 220, 132, 0.1);
+        }
+
+        .app-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .app-card p {
+            color: var(--dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem; /* Add margin to separate button */
+        }
+
+        .windows-btn {
+            background: var(--primary);
+        }
+
+        .windows-btn::before {
+            content: '\f17a';
+            font-family: 'Font Awesome 5 Brands';
+            margin-right: 0.5rem;
+            color: white;
+        }
+
+        .windows-btn:hover {
+            background: var(--hover);
+        }
+
+        .android-btn {
+            background: var(--secondary);
+        }
+
+        .android-btn::before {
+            content: '\f17b';
+            font-family: 'Font Awesome 5 Brands';
+            margin-right: 0.5rem;
+            color: white;
+        }
+
+        .android-btn:hover {
+            background: var(--hover);
+        }
+
+        .web-apps-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .web-app-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .web-app-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: rgba(123, 3, 252, 0.3);
+        }
+
+        .web-app-icon {
+            font-size: 2rem;
+            color: var(--links-primary);
+            margin-bottom: 1rem;
+        }
+
+        .web-app-title {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: var(--dark);
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--dark);
+            font-size: 0.9rem;
+            width: 100%;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            opacity: 0.7;
+            position: relative;
+        }
+
+        /* Toggle Switch */
+        .checkbox-wrapper-51 {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .checkbox-wrapper-51 input[type="checkbox"] {
+            visibility: hidden;
+            display: none;
+        }
+
+        .checkbox-wrapper-51 .toggle {
+            position: relative;
+            display: block;
+            width: 42px;
+            height: 24px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .checkbox-wrapper-51 .toggle:before {
+            content: "";
+            position: relative;
+            top: 1px;
+            left: 1px;
+            width: 40px;
+            height: 22px;
+            display: block;
+            background: #c8ccd4;
+            border-radius: 12px;
+            transition: background 0.2s ease;
+        }
+
+        .checkbox-wrapper-51 .toggle span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            display: block;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(154,153,153,0.75);
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle:before {
+            background: #1175c7;
+        }
+
+        .checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle span {
+            transform: translateX(18px);
+        }
+
+        /* Secret Button */
+        .secret-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+            border: none;
+            background: none;
+            color: var(--dark);
+        }
+
+        .secret-button:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .apps-grid, .web-apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Blue Shade Effect (Gradient) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px; /* Adjust height as needed */
+            background: linear-gradient(to bottom, rgba(0, 123, 255, 0.2), rgba(0, 123, 255, 0)); /* Gradient from 20% to 0% transparency */
+            z-index: -1;
+            pointer-events: none; /* Prevent interference with clicks */
+        }
+
+        .password-info {
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--dark);
+            opacity: 0.7;
+            font-size: 0.9rem;
+            display: inline-block; /* Change to inline-block */
+            background-color: rgba(0, 123, 255, 0.1); /* Light blue background */
+            color: #007bff; /* Blue text color */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .copy-password-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            margin-left: 0.5rem;
+        }
+
+        .copy-password-btn i.fa-check {
+            display: none;
+        }
+    </style>
+</head>
+<body id="pageBody">
+    <div class="checkbox-wrapper-51">
+        <input type="checkbox" id="modeSwitch">
+        <label class="toggle" for="modeSwitch"><span></span></label>
+    </div>
+    <header>
+        <h1><i class="fa-brands fa-unity"></i>Office Apps</h1>
+        <p class="subtitle">Download essential software for your work devices</p>
+        <p class="password-info">
+            All Zips Passwords are: 123
+            <button class="copy-password-btn" onclick="copyPassword()">
+                <i class="fas fa-copy"></i>
+                <i class="fas fa-check" style="display: none;"></i>
+            </button>
+        </p>
+    </header>
+
+    <main style="width: 100%;">
+        <h2 class="section-title">Windows Applications</h2>
+        <div class="apps-grid">
+            <div class="app-card windows-card" onclick="openLink('https://drive.google.com/file/d/1L4f7KKVzKLsVb8mTMCX0GhAetVUrDBe2/view?usp=drive_link');">
+                <div class="app-icon windows-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <span class="platform-badge windows-badge">Windows</span>
+                <h3>Fusion Access Cloud Client</h3>
+                <p>Secure remote access solution for enterprise environments</p>
+                <a href="https://drive.google.com/file/d/1L4f7KKVzKLsVb8mTMCX0GhAetVUrDBe2/view?usp=drive_link" target="_blank" class="btn windows-btn" onclick="event.stopPropagation();">Download</a>
+            </div>
+            <div class="app-card windows-card" onclick="openLink('https://drive.google.com/file/d/1htFzWBc-SGOn2i-0NnCuUEuwBEYQPdoF/view?usp=drive_link');">
+                <div class="app-icon windows-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="platform-badge windows-badge">Windows</span>
+                <h3>Cisco AnyConnect</h3>
+                <p>VPN client for secure network connectivity</p>
+                <a href="https://drive.google.com/file/d/1htFzWBc-SGOn2i-0NnCuUEuwBEYQPdoF/view?usp=drive_link" target="_blank" class="btn windows-btn" onclick="event.stopPropagation();">Download</a>
+            </div>
+            <div class="app-card windows-card" onclick="openLink('https://drive.google.com/file/d/1bc0zBpLRWb-bFnaQKlqUx5vMKWFXHcDU/view?usp=drive_link');">
+                <div class="app-icon windows-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <span class="platform-badge windows-badge">Windows</span>
+                <h3>LinkUp Meeting App</h3>
+                <p>Video conferencing and collaboration platform</p>
+                <a href="https://drive.google.com/file/d/1bc0zBpLRWb-bFnaQKlqUx5vMKWFXHcDU/view?usp=drive_link" target="_blank" class="btn windows-btn" onclick="event.stopPropagation();">Download</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Android Applications</h2>
+        <div class="apps-grid">
+            <div class="app-card android-card" onclick="openLink('https://drive.google.com/file/d/1It2lQ4wFbtsdEjb5Y2fa8tO_d8dWvD2f/view?usp=drive_link');">
+                <div class="app-icon android-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <span class="platform-badge android-badge">Android</span>
+                <h3>Fusion Access Cloud Client</h3>
+                <p>Mobile version of the secure remote access solution</p>
+                <a href="https://drive.google.com/file/d/1It2lQ4wFbtsdEjb5Y2fa8tO_d8dWvD2f/view?usp=drive_link" target="_blank" class="btn android-btn" onclick="event.stopPropagation();">Download</a>
+            </div>
+            <div class="app-card android-card" onclick="openLink('https://drive.google.com/file/d/1sp7i0tK7LKHz8W-krGS_nknCcDO5UreU/view?usp=drive_link');">
+                <div class="app-icon android-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="platform-badge android-badge">Android</span>
+                <h3>Cisco AnyConnect</h3>
+                <p>Mobile VPN client for secure connectivity</p>
+                <a href="https://drive.google.com/file/d/1sp7i0tK7LKHz8W-krGS_nknCcDO5UreU/view?usp=drive_link" target="_blank" class="btn android-btn" onclick="event.stopPropagation();">Download</a>
+            </div>
+            <div class="app-card android-card" onclick="openLink('https://linkup.zong.com.pk/down/index.html');">
+                <div class="app-icon android-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <span class="platform-badge android-badge">Android</span>
+                <h3>LinkUp Meeting App</h3>
+                <p>Mobile video conferencing solution</p>
+                <a href="https://linkup.zong.com.pk/down/index.html" target="_blank" class="btn android-btn" onclick="event.stopPropagation();">Download</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Windows Documents Manager</h2>
+        <div class="apps-grid">
+            <div class="app-card windows-card" onclick="openLink('https://drive.google.com/file/d/1HKTTb425qD-mc9JQppacy0IGtxLv2x_A/view?usp=drive_link');">
+                <div class="app-icon windows-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <span class="platform-badge windows-badge">Windows</span>
+                <h3>Microsoft Office Suite</h3>
+                <p>Comprehensive office productivity suite</p>
+                <a href="https://drive.google.com/file/d/1HKTTb425qD-mc9JQppacy0IGtxLv2x_A/view?usp=drive_link" target="_blank" class="btn windows-btn" onclick="event.stopPropagation();">Download</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Web Apps</h2>
+        <div class="web-apps-grid">
+            <a href="https://officeworksolutionspro.on.drv.tw/www.workflow.com/calculator.html" target="_blank" class="web-app-card">
+                <i class="fas fa-calculator web-app-icon"></i>
+                <h3 class="web-app-title">Revenue Calculator</h3>
+            </a>
+            <a href="https://officeworksolutionspro.on.drv.tw/www.workflow.com/calculator.html" target="_blank" class="web-app-card">
+                <i class="fas fa-calendar-alt web-app-icon"></i>
+                <h3 class="web-app-title">Date Calculator</h3>
+            </a>
+            <a href="https://officeworksolutionspro.on.drv.tw/www.workflow.com/unit-converter.html" target="_blank" class="web-app-card">
+                <i class="fas fa-exchange-alt web-app-icon"></i>
+                <h3 class="web-app-title">Unit Converter</h3>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        © Office Apps 2025
+        <button class="secret-button"><i class="fas fa-fan"></i></button>
+    </footer>
+
+    <script>
+        const body = document.getElementById('pageBody');
+        const modeSwitch = document.getElementById('modeSwitch');
+        const secretButton = document.querySelector('.secret-button');
+        let clickCount = 0;
+
+        secretButton.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 7) {
+                window.open('https://www.google.com', '_blank');
+                clickCount = 0;
+            }
+        });
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function applyTheme(isDark) {
+            if (isDark) {
+                body.classList.add('dark-mode');
+                modeSwitch.checked = true;
+                setCookie('darkMode', 'enabled', 365);
+            } else {
+                body.classList.remove('dark-mode');
+                modeSwitch.checked = false;
+                setCookie('darkMode', null, 365);
+            }
+        }
+
+        function checkTimeAndSetTheme() {
+            const now = new Date();
+            const hours = now.getHours();
+            applyTheme(hours >= 19 || hours < 7);
+        }
+
+        const currentMode = getCookie('darkMode');
+        if (currentMode) {
+            applyTheme(currentMode === 'enabled');
+        } else {
+            checkTimeAndSetTheme();
+        }
+
+        modeSwitch.addEventListener('change', () => {
+            applyTheme(modeSwitch.checked);
+        });
+
+        // Apply initial theme immediately to prevent flash of incorrect theme
+        if (getCookie('darkMode')) {
+            applyTheme(getCookie('darkMode') === 'enabled');
+        } else {
+            checkTimeAndSetTheme();
+        }
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+
+        function copyPassword() {
+            const password = "123";
+            const copyButton = document.querySelector('.copy-password-btn');
+            const copyIcon = copyButton.querySelector('.fa-copy');
+            const checkIcon = copyButton.querySelector('.fa-check');
+
+            navigator.clipboard.writeText(password).then(() => {
+                copyIcon.style.display = 'none';
+                checkIcon.style.display = 'inline-block';
+                setTimeout(() => {
+                    copyIcon.style.display = 'inline-block';
+                    checkIcon.style.display = 'none';
+                }, 1500); // Revert after 1.5 seconds
+            }).catch(err => {
+                console.error('Could not copy password: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
